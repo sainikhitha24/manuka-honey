@@ -13,27 +13,25 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState } from '../store';
-import type { CartItem } from '../types/product';
 import { removeItem, updateQuantity, closeCart } from '../store/cartSlice';
 
 export const Cart = () => {
   const dispatch = useDispatch();
-  const { items, isOpen } = useSelector((state: RootState) => state.cart);
+  const { items, isOpen } = useSelector((state) => state.cart);
 
   const handleClose = () => {
     dispatch(closeCart());
   };
 
-  const handleUpdateQuantity = useCallback((id: string, quantity: number) => {
+  const handleUpdateQuantity = useCallback((id, quantity) => {
     dispatch(updateQuantity({ id, quantity }));
   }, [dispatch]);
 
-  const handleRemoveItem = useCallback((id: string) => {
+  const handleRemoveItem = useCallback((id) => {
     dispatch(removeItem(id));
   }, [dispatch]);
 
-  const subtotal = items.reduce((sum: number, item: CartItem) => sum + item.price * item.quantity, 0);
+  const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
     <Drawer

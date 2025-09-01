@@ -1,15 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Product } from '../types/product';
 
-interface ProductState {
-  products: Product[];
-  selectedProduct: Product | null;
-  loading: boolean;
-  error: string | null;
-}
-
-const initialState: ProductState = {
+const initialState = {
   products: [],
   selectedProduct: null,
   loading: false,
@@ -20,16 +11,16 @@ export const productSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    setProducts: (state, action: PayloadAction<Product[]>) => {
+    setProducts: (state, action) => {
       state.products = action.payload;
     },
-    setSelectedProduct: (state, action: PayloadAction<Product>) => {
+    setSelectedProduct: (state, action) => {
       state.selectedProduct = action.payload;
     },
-    setLoading: (state, action: PayloadAction<boolean>) => {
+    setLoading: (state, action) => {
       state.loading = action.payload;
     },
-    setError: (state, action: PayloadAction<string | null>) => {
+    setError: (state, action) => {
       state.error = action.payload;
     }
   }

@@ -1,12 +1,7 @@
 import { Box, Drawer, IconButton, Typography, List, ListItemButton, ListItemText, Divider } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-interface SideMenuProps {
-  open: boolean;
-  onClose: () => void;
-}
-
-export const SideMenu = ({ open, onClose }: SideMenuProps) => {
+export const SideMenu = ({ open, onClose }) => {
   return (
     <Drawer
       anchor="left"

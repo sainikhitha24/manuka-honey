@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { 
   Card,
   CardContent,
@@ -9,14 +8,8 @@ import {
   Box,
   Stack
 } from '@mui/material';
-import type { Product } from '../types/product';
 
-interface ProductCardProps {
-  product: Product;
-  onAddToCart: (product: Product) => void;
-}
-
-export const ProductCard: FC<ProductCardProps> = ({ product, onAddToCart }) => {
+export const ProductCard = ({ product, onAddToCart }) => {
   return (
     <Card 
       sx={{ 

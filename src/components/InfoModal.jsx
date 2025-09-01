@@ -6,13 +6,7 @@ import {
   Paper
 } from '@mui/material';
 
-interface InfoModalProps {
-  open: boolean;
-  anchorEl: HTMLElement | null;
-  onClose: () => void;
-}
-
-export const InfoModal = ({ open, anchorEl, onClose }: InfoModalProps) => {
+export const InfoModal = ({ open, anchorEl, onClose }) => {
   return (
     <Popover
       open={open}

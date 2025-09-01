@@ -2,9 +2,9 @@ import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { store } from './store';
-import { Header } from './components/Header';
-import { Cart } from './components/Cart';
-import ProductDetail from './pages/ProductDetail';
+import { Header } from './components/Header.jsx';
+import { Cart } from './components/Cart.jsx';
+import ProductDetail from './pages/ProductDetail.jsx';
 import './App.css';
 
 const theme = createTheme({
@@ -38,7 +38,7 @@ const theme = createTheme({
   },
 });
 
-function App() {
+export default function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
@@ -55,5 +55,3 @@ function App() {
     </Provider>
   );
 }
-
-export default App;
