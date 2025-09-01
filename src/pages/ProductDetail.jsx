@@ -172,12 +172,12 @@ export default function ProductDetail() {
           <Box>
             <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
               {/* Product Title */}
-              <Typography variant="h1" sx={{ fontSize: '2.5rem', fontWeight: 400, color: '#333', mb: 2, alignSelf: 'flex-start' }}>{product.name}</Typography>
+              <Typography variant="h1" sx={{ fontSize: '2.5rem', fontWeight: 400, color: '#333', mb: 2, textAlign: 'left', width: '100%' }}>{product.name}</Typography>
               {/* UMF and MGO */}
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="h2" sx={{ fontSize: '2rem', fontWeight: 400, color: '#333', mb: 1 }}>UMF™ {product.umf}</Typography>
-                <Typography variant="h2" sx={{ fontSize: '2rem', fontWeight: 400, color: '#333', mb: 1 }}>MGO {product.mgo}</Typography>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+              <Box sx={{ mb: 2, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <Typography variant="h2" sx={{ fontSize: '2rem', fontWeight: 400, color: '#333', mb: 1, textAlign: 'left' }}>UMF™ {product.umf}</Typography>
+                <Typography variant="h2" sx={{ fontSize: '2rem', fontWeight: 400, color: '#333', mb: 2, textAlign: 'left' }}>MGO {product.mgo}</Typography>
+                <Box sx={{ display: 'flex', justifyContent: 'flex-start', width: '100%' }}>
                   <Button startIcon={<InfoOutlinedIcon />} onClick={e => { setAnchorEl(e.currentTarget); setInfoModalOpen(true); }} sx={{ bgcolor: '#f5f5f5', color: '#666', textTransform: 'none', fontSize: '0.875rem', '&:hover': { bgcolor: '#e0e0e0' } }}>What is UMF and MGO?</Button>
                 </Box>
                 <InfoModal open={infoModalOpen} anchorEl={anchorEl} onClose={() => { setInfoModalOpen(false); setAnchorEl(null); }} />
